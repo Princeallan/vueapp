@@ -13,8 +13,10 @@
         box-sizing: border-box;
     }
     .title{
-        background-color: #f1f1f1;
+        background-color: #008080;
         padding: 15px;
+        color: white;
+
     }
 
     .menu {
@@ -26,7 +28,5 @@
         margin-top: 7px;
         border-bottom: 1px solid #f1f1f1;
     }
-
-
 
 </style>
