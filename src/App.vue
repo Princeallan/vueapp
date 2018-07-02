@@ -8,7 +8,6 @@
 
 <script>
 
-    import topBar from './components/HelloWorld.vue'
 
     export default {
 

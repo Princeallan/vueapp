@@ -5,16 +5,30 @@
       <div class="menu">
           <div class="menuitem"><router-link :to="{path: '/'}">Home</router-link></div>
           <div class="menuitem"><router-link :to="{name: 'About'}">About us</router-link></div>
+          <div class="menuitem"><router-link :to="{name: 'list'}">My list</router-link></div>
           <div class="menuitem">History</div>
           <div class="menuitem">Gallery</div>
       </div>
 
-      <div class="main">
-          <h2>Vue.js</h2>
-          <p>Vue.js is a library for building interactive web interfaces.
-              It provides data-reactive components with a simple and flexible API.</p>
-          <img src="../assets/logo.png" style="width:100%">
-      </div>
+      {{counter}} <br>
+      <button v-on:click="counter">Start Count</button>
+      <input v-model="counterMsg">
+
+      <tabs>
+          <tab name="Categories" :selected="true">
+              <h4>Welcome to our Categories</h4>
+          </tab>
+
+          <tab name="Brands">
+              <h4>Welcome to our Brands</h4>
+          </tab>
+
+          <tab name="Partners">
+              <h4>Welcome to our partners</h4>
+          </tab>
+
+      </tabs>
+
   </div>
 </template>
 
@@ -23,8 +37,28 @@
     import topBar from './topnav.vue';
 export default {
   name: 'HelloWorld',
+    data(){
+      return{
+            counter:0,
+            counterMsg:''
+      }
+    },
     components: {
         topBar
+    },
+    watch: {
+        counterMsg: {
+            handler: function() {
+                this.updateCounter();
+            }
+        }
+    },
+
+    methods: {
+        updateCounter(){
+
+            this.counter = this.counterMsg.length;
+        }
     }
 }
 </script>
