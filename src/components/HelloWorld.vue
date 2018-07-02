@@ -14,37 +14,38 @@
       <button v-on:click="counter">Start Count</button>
       <input v-model="counterMsg">
 
-      <tabs>
-          <tab name="Categories" :selected="true">
-              <h4>Welcome to our Categories</h4>
-          </tab>
+      <div></div>
 
-          <tab name="Brands">
-              <h4>Welcome to our Brands</h4>
-          </tab>
+      <div>
+          <b-button-group>
+              <b-button @click="showList()">Button 1</b-button>
 
-          <tab name="Partners">
-              <h4>Welcome to our partners</h4>
-          </tab>
-
-      </tabs>
+          </b-button-group>
+      </div>
+      <component v-bind:is="current_component"></component>
 
   </div>
 </template>
 
 <script>
-
+    import first from './first.vue';
+    import second from './second.vue';
     import topBar from './topnav.vue';
 export default {
   name: 'HelloWorld',
     data(){
       return{
+          message:'',
             counter:0,
-            counterMsg:''
+            counterMsg:'',
+            current_component:"first"
+
       }
     },
     components: {
-        topBar
+        'first' : first,
+        'second': second,
+        "topBar":topBar
     },
     watch: {
         counterMsg: {
@@ -58,7 +59,12 @@ export default {
         updateCounter(){
 
             this.counter = this.counterMsg.length;
-        }
+        },
+        showList(){
+            this.current_component = "second"
+            }
+
+
     }
 }
 </script>

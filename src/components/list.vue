@@ -29,7 +29,7 @@
 
         <button type="button" @click="addUser()" id="button">Add Customer</button>
 
-        <p v-bind:class="{greenbody:users.length>5}">Daily target achieved: {{ message }} .</p>
+        <p v-bind:class="{greenbody:users.length>5}">Daily target achieved: {{ user.message }} .</p>
 
         <span v-if="users.length==3">
             <p style="color: red;"> You have added Three Users You can now bw rated</p>
