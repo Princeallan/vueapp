@@ -18,7 +18,7 @@
         },
         methods: {
             registerUser(user) {
-
+                this.$store.commit('register',user.id);
             }
         }
     }
