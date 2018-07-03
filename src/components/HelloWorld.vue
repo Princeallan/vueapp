@@ -6,6 +6,7 @@
           <div class="menuitem"><router-link :to="{path: '/'}">Home</router-link></div>
           <div class="menuitem"><router-link :to="{name: 'About'}">About us</router-link></div>
           <div class="menuitem"><router-link :to="{name: 'list'}">My list</router-link></div>
+          <div class="menuitem"><router-link :to="{name: 'blog'}">My blog</router-link></div>
           <div class="menuitem">History</div>
           <div class="menuitem">Gallery</div>
       </div>
@@ -28,6 +29,7 @@
 </template>
 
 <script>
+    import blog from './blog.vue'
     import first from './first.vue';
     import second from './second.vue';
     import topBar from './topnav.vue';
@@ -45,6 +47,7 @@ export default {
     components: {
         'first' : first,
         'second': second,
+        'blog' : blog,
         "topBar":topBar
     },
     watch: {

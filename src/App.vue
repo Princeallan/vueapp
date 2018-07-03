@@ -2,17 +2,25 @@
   <div id="app">
     <!-- the router outlet, where all matched components would ber viewed -->
       <router-view></router-view>
+    <registrations></registrations>
+
+    <registration></registration>
 
   </div>
 </template>
 
 <script>
 
+    import topBar from './components/HelloWorld.vue'
+    import registration from './components/registration.vue'
+    import registrations from './components/registrations.vue'
 
     export default {
 
-        name: 'app',
-
+        components: {
+            'registration': registration,
+            'registrations': registrations
+        }
 
 
     }
